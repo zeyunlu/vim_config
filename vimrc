@@ -1,10 +1,21 @@
 execute pathogen#infect()
+set background=dark
+let g:solarized_termcolors=256
+set t_Co=16
+colorscheme solarized
 
+let mapleader = ","
+let g:mapleader = ","
 map <leader>s :source ~/.vimrc<CR>
-
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
 set updatetime=250
-
-
+" map <leader>cv <plug>NERDComUncommentLine
+" let g:NERDComUncommentLine = <leader>cv
+:map <leader>cv :NERDComUncommentLine<CR>
+vmap <C-c> "*y     " Yank current selection into system clipboard
+nmap <C-c> "*Y     " Yank current line into system clipboard (if nothing is selected)
+nmap <C-v> "*p     " Paste from system clipboard
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -115,8 +126,6 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -200,6 +209,7 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 set number
+set relativenumber
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -208,16 +218,16 @@ set number
 syntax enable 
 
 " Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
+" if $COLORTERM == 'gnome-terminal'
     set t_Co=256
-endif
+" endif
 
-try
-    colorscheme desert
-catch
-endtry
-
-set background=dark
+" try
+"     colorscheme desert
+" catch
+" endtry
+"
+" set background=dark
 set guifont=Inconsolata\ Regular:h18 
 " Set extra options when running in GUI mode
 if has("gui_running")
