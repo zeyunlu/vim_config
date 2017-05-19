@@ -7,12 +7,7 @@ colorscheme solarized
 let mapleader = ","
 let g:mapleader = ","
 map <leader>s :source ~/.vimrc<CR>
-noremap <F12> <Esc>:syntax sync fromstart<CR>
-inoremap <F12> <C-o>:syntax sync fromstart<CR>
 set updatetime=250
-" map <leader>cv <plug>NERDComUncommentLine
-" let g:NERDComUncommentLine = <leader>cv
-:map <leader>cv :NERDComUncommentLine<CR>
 vmap <C-c> "*y     " Yank current selection into system clipboard
 nmap <C-c> "*Y     " Yank current line into system clipboard (if nothing is selected)
 nmap <C-v> "*p     " Paste from system clipboard
